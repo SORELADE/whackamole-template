@@ -5,11 +5,11 @@ def draw_grid(screen):
 
     # Horizontal Lines
     for y in range(0, 512, 32):
-        pygame.draw.line(screen, pygame.Color(0, 0, 0), (0, y), (640, y))
+        pygame.draw.line(screen, "black", (0, y), (640, y))
 
     # Vertical Lines
     for x in range(0, 640, 32):
-        pygame.draw.line(screen, pygame.Color(0, 0, 0), (x, 0), (x, 512))
+        pygame.draw.line(screen, "black", (x, 0), (x, 512))
 
 def to_grid_pos(pos):
     return (pos[0] // 32, pos[1] // 32)
@@ -46,8 +46,6 @@ def main():
                         # Gets the new square indices with randrage() and then converts them to coordinates
                         mole_x = random.randrange(0, 20) * 32
                         mole_y = random.randrange(0, 16) * 32
-                    
-                    print(event.pos, clicked_square)
             
             # Draw Background
             screen.fill("light green")
